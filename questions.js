@@ -1,18 +1,14 @@
 // ==========================================================================
-// 📝 《秋天的怀念》综合练习题库 (questions.js) - 马来西亚 UASA/KSSM 本地考卷标准版
-// 甲组：客观选择题（10题，含引文题、I/II/III/IV组合题、修辞作用题）
-// 乙组：主观简答题（15分制，含 [1分]/[2分] 采分点、KBAT题及随文语文知识题）
+// 📝 《秋天的怀念》综合练习题库 (questions.js) - 画线词醒目下划线修复版
 // ==========================================================================
 
-// 🔖 本地参考书标准采分点角标（如 [1分]、[2分]）
 const PT = (pts) => `<span style="display:inline-block; background:var(--primary-color); color:#fff; font-size:11px; font-weight:800; padding:0 5px; margin:0 3px; border-radius:4px;">[${pts}分]</span>`;
 
-// 🔖 题干原句引文框（还原马来西亚考卷“上引文、下设问”排版）
 const QUOTE_BOX = (text) => `<div style="margin:6px 0 10px 0; padding:8px 12px; background:var(--notebook-bg); border-left:3px solid var(--primary-color); border-radius:4px; font-weight:600; font-size:14.5px; color:var(--text-color); line-height:1.65;">${text}</div>`;
 
-// ==========================================================================
-// 甲组：现代文理解客观题（10分，每题1分）
-// ==========================================================================
+const HL = (text) => `<u style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px; color:var(--primary-color); font-weight:800;">${text}</u>`;
+
+// 甲组：现代文理解客观题（10分）
 const quizDataList = [
     {
         id: 1,
@@ -28,7 +24,7 @@ const quizDataList = [
     },
     {
         id: 2,
-        question: "在第1段和第3段中，母亲面对脾气暴怒的“我”时，有哪些小心翼翼的举动？<br><span style='font-weight:600; font-size:14px; display:inline-block; margin-top:6px; line-height:1.7;'>I 我摔东西时，她悄悄躲出去偷听动静<br>II 我恢复沉寂后，她红着眼边悄悄进来<br>III 窗外落叶飘落时，她走过来挡在窗前<br>IV 我捶打双腿喊叫时，她严厉斥责我的软弱</span>",
+        question: "在第1段和第3段中，母亲面对脾气暴怒的“我”时，有哪些小心翼翼的举动？<br><span style='font-weight:500; font-size:14px; display:inline-block; margin-top:6px; line-height:1.7;'>I 我摔东西时，她悄悄躲出去偷听动静<br>II 我恢复沉寂后，她红着眼边悄悄进来<br>III 窗外落叶飘落时，她走过来挡在窗前<br>IV 我捶打双腿喊叫时，她严厉斥责我的软弱</span>",
         options: [
             "A I、II 和 III",
             "B I、II 和 IV",
@@ -40,7 +36,7 @@ const quizDataList = [
     },
     {
         id: 3,
-        question: "结合第1段至第3段，“我”对母亲提议去北海看花的态度发生了怎样的变化？按文章先后顺序排列。<br><span style='font-weight:600; font-size:14px; display:inline-block; margin-top:6px; line-height:1.7;'>I 怀念悔悟 &nbsp;&nbsp;&nbsp;&nbsp; II 暴怒拒绝 &nbsp;&nbsp;&nbsp;&nbsp; III 无奈嫌烦 &nbsp;&nbsp;&nbsp;&nbsp; IV 松口答应</span>",
+        question: "结合第1段至第3段，“我”对母亲提议去北海看花的态度发生了怎样的变化？按文章先后顺序排列。<br><span style='font-weight:500; font-size:14px; display:inline-block; margin-top:6px; line-height:1.7;'>I 怀念悔悟 &nbsp;&nbsp;&nbsp;&nbsp; II 暴怒拒绝 &nbsp;&nbsp;&nbsp;&nbsp; III 无奈嫌烦 &nbsp;&nbsp;&nbsp;&nbsp; IV 松口答应</span>",
         options: [
             "A I → II → III → IV",
             "B II → IV → III → I",
@@ -136,9 +132,7 @@ const quizDataList = [
     }
 ];
 
-// ==========================================================================
 // 乙组：现代文理解简答题（15分制 + 随文语文知识训练）
-// ==========================================================================
 const essayDataList = [
     {
         id: 1,
@@ -167,10 +161,12 @@ const essayDataList = [
     {
         id: 5,
         question: `（五）<strong>【随文语文知识训练】</strong>阅读下面的句子，完成第 a 至 d 小题： <span style="color:var(--primary-color);">[附加4分]</span><br>` +
-                  `a. “她<strong>憔悴</strong>的脸上现出央求般的神色。”——写出画线词语的<strong>词性</strong>。<br>` +
+                  `<div style="font-weight:500; margin-top:8px; line-height:1.9;">` +
+                  `a. “她${HL("憔悴")}的脸上现出央求般的神色。”——写出画线词语的<strong>词性</strong>。<br>` +
                   `b. “听着听着李古一甜美的歌声，我会猛地把手边的东西摔向四周的墙壁。”——写出句中的一个<strong>偏正短语</strong>。<br>` +
                   `c. “母亲喜欢花，<strong>可</strong>自从我的腿瘫痪后，她侍弄的那些花都死了。”——写出上面句子的<strong>复句类型</strong>。<br>` +
-                  `d. “邻居的小伙子背着我去看她的时候，她正艰难地呼吸着，像她那一生艰难的生活。”——判断此句是否运用了<strong>比喻</strong>修辞，并简述原因。`,
+                  `d. “邻居的小伙子背着我去看她的时候，她正艰难地呼吸着，像她那一生艰难的生活。”——判断此句是否运用了<strong>比喻</strong>修辞，并简述原因。` +
+                  `</div>`,
         sampleAnswer: `a. 词性：<strong>形容词</strong>${PT(1)}<br>` +
                       `b. 偏正短语：<strong>甜美的歌声</strong>（或：手边的东西 / 四周的墙壁）${PT(1)}<br>` +
                       `c. 复句类型：<strong>转折复句</strong>（标志关联词：“可”）${PT(1)}<br>` +
