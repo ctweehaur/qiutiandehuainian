@@ -31,7 +31,7 @@ const lessonData = [
     ["；", "", "", ""],
     ["听着", "tīng zhe", "listening to", "mendengar"],
     ["听着", "tīng zhe", "listening to", "mendengar"],
-    ["李古一", "lǐ gǔ yī", "Li Guyi (famous singer, standard: 李谷一)", "Li Guyi (penyanyi terkenal)"],
+    ["李谷一", "lǐ gǔ yī", "Li Guyi (famous singer, standard: 李谷一)", "Li Guyi (penyanyi terkenal)"],
     ["甜美的", "tián měi de", "sweet and melodious", "yang merdu dan manis"],
     ["歌声", "gē shēng", "singing voice", "suara nyanyian"],
     ["，", "", "", ""],
